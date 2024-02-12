@@ -11,7 +11,7 @@ export const shazamCoreApi = createApi({
     },
   }),
   endpoints: (builder)=>({
-    getRecommend:  builder.query({query: '/recommend'})
+    getRecommend:  builder.query({query: ()=> '/recommend'})
   })
 })
 
