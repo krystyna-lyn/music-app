@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HiOutlineHashtag, HiOutlineHome, HiOutlineMenu, HiOutlinePhotograph, HiOutlineUserGroup } from 'react-icons/hi';
 import { RiCloseLine } from 'react-icons/ri';
-
+import { logo } from '../assets';
 
 const links = [
   { name: 'Discover', to: '/', icon: HiOutlineHome },
@@ -32,8 +32,8 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
-        <img  alt="logo" className="w-full h-14 object-contain" />
+      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#141314]">
+        <img src={ logo } alt="logo" className="w-[1200px] h-28 object-contain" />
         <NavLinks />
       </div>
 

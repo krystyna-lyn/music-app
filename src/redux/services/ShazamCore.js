@@ -11,12 +11,14 @@ export const shazamCoreApi = createApi({
     },
   }),
   endpoints: (builder)=>({
-    getTopCharts:  builder.query({query: ()=> '/charts/track'})
+    getTopCharts:  builder.query({query: ()=> '/charts/track'}),
+    getSongsBySearch: builder.query({ query: (searchTerm)=> `/search/multi?search_type=SONGS_ARTISTS&query=${searchTerm}` })
   })
 })
 
 export const {
   useGetTopChartsQuery,
+  useGetSongsBySearchQuery,
 } =  shazamCoreApi;
 
 // Used to make the API call and retrieve data from it. This hook will automatically dispatch
