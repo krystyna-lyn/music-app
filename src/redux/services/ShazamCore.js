@@ -15,6 +15,7 @@ export const shazamCoreApi = createApi({
     getSongsBySearch: builder.query({ query: (searchTerm)=> `/search?term=${searchTerm}` }),
     getSongDetails:  builder.query({ query: ({ songid }) => `/songs/get-details?key=${songid}` }),
     getSongRelated:  builder.query({ query: ({ songid }) => `/artists/shazam-songs/list-similarities?id=track-similarities-id-${songid}` }),
+    getTopArtists:  builder.query({query: ()=> '/charts/list'}),
     
   })
 })
@@ -23,7 +24,8 @@ export const {
   useGetTopChartsQuery,
   useGetSongsBySearchQuery,
   useGetSongDetailsQuery,
-  useGetSongRelatedQuery
+  useGetSongRelatedQuery,
+  useGetTopArtistsQuery
   
 } =  shazamCoreApi;
 
