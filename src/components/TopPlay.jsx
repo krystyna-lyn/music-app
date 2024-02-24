@@ -1,5 +1,9 @@
-const TopPlay = () => (
-  <div>TopPlay</div>
-);
+import React from 'react'
 
-export default TopPlay;
+const TopPlay = () => {
+  return (
+    <div>TopPlay</div>
+  )
+}
+
+export default TopPlay
