@@ -1,28 +1,19 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { DetailsHeader, Error, Loader, RelatedSongs } from '../components';
-import { useGetSongDetailsQuery, useGetSongRelatedQuery } from '../redux/services/ShazamCore';
+import { useGetSongDetailsQuery } from '../redux/services/ShazamCore';
 
 const SongDetails = () => {
   const { songid, id: artistId } = useParams();
 
  
 
-  const { data, isFetching: isFetchinRelatedSongs, error } = useGetSongRelatedQuery({ songid });
   const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songid });
-
-  if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searching song details" />;
 
   if (isFetchingSongDetails) return <Loader title="Searching song details" />;
 
+
   console.log(songData);
-  console.log(data);
-
-
-  if (error) return <Error />;
-
-
 
 
   return (
